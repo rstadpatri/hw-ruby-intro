@@ -3,7 +3,7 @@
 # Part 1
 
 def sum arr
-  # git test
+  arr.inject(0, :+) #base case 0 for empty set, takes sum of arr
 end
 
 def max_2_sum arr
@@ -33,3 +33,5 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
+
+puts sum([0,1,2]) #calls def sum
