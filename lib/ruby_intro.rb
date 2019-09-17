@@ -14,8 +14,14 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.length == 0 || arr.length == 1 #checks if arr is a single elemens
+    return false
+  else 
+    arr.combination(2).any? {|a, b| a + b == n} #checks every combination and sums them, if equal to n returns true, else returns false
+  end
 end
+
+
 
 # Part 2
 
@@ -39,4 +45,5 @@ end
 
 #function calls
 #puts sum([0,1,2]) #calls def sum
-puts max_2_sum([1, 2, 3])
+#puts max_2_sum([1, 2, 3])
+puts sum_to_n?([1, 4, 3], 6)
