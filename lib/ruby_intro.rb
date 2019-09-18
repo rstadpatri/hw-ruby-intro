@@ -55,8 +55,18 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn, :price 
+  def initialize(isbn, price)
+    raise ArgumentError if isbn.length == 0 || price <= 0 #raises error for invalid inputs
+    @isbn = isbn 
+    @price = price
+  end
+  def price_as_string
+    new_price = '%.2f' % price #ensure price has 2 decimal places
+    return "$" + new_price.to_s #add dollar sign to string
+  end
 end
+
 
 #FUNCTION CALLS
 
@@ -92,4 +102,13 @@ end
 #puts binary_multiple_of_4?('0100')
 #puts binary_multiple_of_4?('a100')
 #puts binary_multiple_of_4?(' ')
+
+#PART 3
+#BOOK IN STOCK
+@book = BookInStock.new('isbn1', 33.8)
+#puts @book.price
+#puts @book.isbn = 'isbn2'
+#puts BookInStock.new('isbn1', -5)
+#puts BookInStock.new('', 2)
+#puts BookInStock.new('isbn3', 20.1).price_as_string
 
